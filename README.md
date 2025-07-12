@@ -8,6 +8,6 @@ Doc-Print is a website that lets xerox shops print documents without saving them
 
 
 <br>
-<img src="https://i.ibb.co/4RtY5Q2V/IMG-20250712-WA0001.jpg" width="350">
+<img src="https://i.ibb.co/4RtY5Q2V/IMG-20250712-WA0001.jpg" width="600">
 <br> 
 
