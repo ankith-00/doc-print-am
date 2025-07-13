@@ -12,13 +12,16 @@
 <br>
 
 ## ⚙️ Tech Stack
-| Technology   | Purpose                |
-|--------------|------------------------|
-| Frontend     | EJS, Tailwind CSS      |
-| Backend      | ExpressJS, NodeJS      |
-| Storage & DB | Supabase               |
+| Technology      | Purpose                |
+|-----------------|------------------------|
+| Frontend        | EJS, Tailwind CSS      |
+| Backend         | ExpressJS, NodeJS      |
+| Storage & DB    | Supabase               |
+| Authenticaion   | JWT                    |
+| Gmail           | Email Service          |
 
 <br>
+
 
 ## 📦 Installation 
 ```bash
