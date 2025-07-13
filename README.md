@@ -2,7 +2,7 @@
 📄 doc-print is a webapp that lets xerox shops print documents without saving them on local computer. This keeps customer files private and helps stop misuse. <br>
 This project features two main components 
 - Customer module for file uploading &nbsp;&nbsp;&nbsp;&nbsp; https://doc-print.streamlit.app 
-- Admin module for print operations. &nbsp;&nbsp;&nbsp;&nbsp; 
+- Admin module for print operations. &nbsp;&nbsp;&nbsp;&nbsp; https://doc-print-am.onrender.com
 <br><br>
 
 ## ✅ Features
