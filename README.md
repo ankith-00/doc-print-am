@@ -30,6 +30,18 @@ npm run dev
 <br>
 
 ## 🔒 .env
+```bash
+PORT = 3000
+SUPABASE_URL = " "
+ANON_KEY = " "
+TABLE_NAME = " "
+BUCKET_NAME = " "
+
+GMAIL_USER = " EMAIL_ID "
+GMAIL_APP_PASSWPRD = " "
+
+JWT_KEY = " "
+```
 
 <br>
 
