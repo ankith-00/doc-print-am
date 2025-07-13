@@ -1,5 +1,6 @@
 # doc-print-am
 📄 doc-print is a website that lets xerox shops print documents without saving them on local computer. This keeps customer files private and helps stop misuse.
+“This project features two main components — a module for file uploads and another for admin operations.”
 <br><br>
 
 ## ✅ Features
@@ -7,9 +8,8 @@
 - Customer Data Protection
 - Zero Misuse Guarantee
 - Ideal Solution for Printing & Xerox Shops
-
-
 <br>
+
 
 ## ⚙️ Tech Stack
 | Technology      | Purpose                |
@@ -19,7 +19,6 @@
 | Storage & DB    | Supabase               |
 | Authenticaion   | JWT                    |
 | Gmail           | Email Service          |
-
 <br>
 
 
@@ -29,8 +28,8 @@ git clone https://github.com/ankith-00/doc-print-am.git
 npm install
 npm run dev
 ```
-
 <br>
+
 
 ## 🔒 .env
 ```bash
@@ -45,13 +44,29 @@ GMAIL_APP_PASSWPRD = " "
 
 JWT_KEY = " "
 ```
-
 <br>
 
 
 
 ## 📁 File structure
-
+doc-print-am/
+├── config/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── db.js
+├── controllers/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── delefile_controller.js
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── email_controller.js
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── fetchFile_controller.js
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── verification_controller.js
+├── public/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── main.css
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── registerStore.js
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── loginStore.js
+├── views/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── partials/
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── navbars
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── footer
+├── .env
+├── server.js
 
 
 
