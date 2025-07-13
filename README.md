@@ -56,12 +56,16 @@ doc-print-am/   <br>
 ├── controllers <br>
 ├── public      <br>
 ├── views       <br>
-├── .env        <br>
 ├── server.js   <br>
+├── .env        <br>
 ├── package-lock.json   <br>
 ├── package.json        <br>
 
 
 <br> <br>
-<img src="https://i.ibb.co/4RtY5Q2V/IMG-20250712-WA0001.jpg" width="600">
+<img src="https://i.ibb.co/4RtY5Q2V/IMG-20250712-WA0001.jpg" width="800">
+<img src="https://i.ibb.co/Qv4z2jKK/IMG-20250712-WA0008.jpg" width="800">
+<img src="https://i.ibb.co/5WBzhR5L/IMG-20250712-WA0009.jpg" width="800">
+<img src="https://i.ibb.co/yFmT07Gs/IMG-20250712-WA0005.jpg" width="800">
+<img src="https://i.ibb.co/XfWXmG9j/IMG-20250712-WA0004.jpg" width="800">
 <br> 
