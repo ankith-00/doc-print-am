@@ -1,6 +1,6 @@
 # doc-print-am
 📄 doc-print is a website that lets xerox shops print documents without saving them on a computer. This keeps customer files private and helps stop misuse.
-<br>
+<br><br>
 
 ## ✅ Features
 - Print Without Downloading
@@ -12,9 +12,10 @@
 <br>
 
 ## ⚙️ Tech Stack
-Technology    |   Purpose       |
----------------------------------
-NodeJS        |                  |
+| Technology  | Purpose                |
+|-------------|------------------------|
+|             |                        |
+| CSS         | Custom styling         |
 
 
 <br>
