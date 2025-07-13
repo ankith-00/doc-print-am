@@ -70,8 +70,8 @@ doc-print-am/ <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──  store-registration.ejs <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──  dashboard.ejs <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──  info.ejs <br>
-├── .env br>
-├── server.js br>
+├── .env <br>
+├── server.js <br>
 
 
 
