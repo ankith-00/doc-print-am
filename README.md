@@ -22,7 +22,9 @@
 
 ## 📦 Installation 
 ```bash
-
+git clone https://github.com/ankith-00/doc-print-am.git
+npm install
+npm run dev
 ```
 
 <br>
