@@ -1,6 +1,8 @@
 # doc-print-am
-📄 doc-print is a website that lets xerox shops print documents without saving them on local computer. This keeps customer files private and helps stop misuse.
-“This project features two main components — a module for file uploads and another for admin operations.”
+📄 doc-print is a website that lets xerox shops print documents without saving them on local computer. This keeps customer files private and helps stop misuse. <br>
+This project features two main components — 
+- Customer module for file uploading
+- Admin module for print operations.
 <br><br>
 
 ## ✅ Features
