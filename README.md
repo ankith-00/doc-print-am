@@ -51,20 +51,20 @@ JWT_KEY = " "
 ## 📁 File structure
 doc-print-am/ <br>
 ├── config/   <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── db.js br>
-├── controllers/ br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── delefile_controller.js br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── email_controller.js br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── fetchFile_controller.js br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── verification_controller.js br>
-├── public/ br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── main.css br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── registerStore.js br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── loginStore.js br>
-├── views/ br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── partials/ br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── navbars br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── footer br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── db.js <br>
+├── controllers/ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── delefile_controller.js <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── email_controller.js <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── fetchFile_controller.js <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── verification_controller.js <br>
+├── public/ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── main.css <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── registerStore.js <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── loginStore.js <br>
+├── views/ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── partials/ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── navbars <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── footer <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──  index.ejs <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──  login.ejs <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──  store-registration.ejs <br>
