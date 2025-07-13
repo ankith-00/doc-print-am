@@ -1,0 +1,24 @@
+#  - - PROJECT PACKAGES ( package.json ) - - ->
+1. express
+2. ejs 
+3. @supabase/supabase-js
+4. bcrypt
+5. cookie-parser
+6. dotenv
+7. jsonwebtoken
+8. nodemailer
+9. nodemon
+
+
+# - - COMMAND TO LIST PACKAGES INSTALLED - - ->
+npm list --depth=0
+
+# - - COMMAND TO INSTALL ALL PACKEGES USED IN THIS PROJECT - - ->
+npm install
+
+
+# - - CREDENTIALS REQUIRED ( .env ) - - ->
+1. SUPABASE_URL & SUPABASE_KEY
+2. PORT 
+3. GMAIL_USER & GMAIL_APP_PASSWORD
+4. JWT_SECRET

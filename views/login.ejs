@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>doc-print</title>
+        <!-- MAIN CSS FILE  -->
+        <link rel="stylesheet" href="main.css">
+        
+        <!-- TAILWIND CSS CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body>
+        
+        <!-- NAVBAR -->
+        <%- include('partials/navbars/navbar-register') %>
+
+        <!-- MAIN -->
+        <main class="w-full h-full flex justify-center items-center">
+            <div class="login-box">
+                <!-- ALERT BOX -->
+                <div class="w-full h-14 flex justify-center items-center">
+                    <div id="alert-box">
+                        <p id="alert-content"> </p>
+                    </div>
+                </div>
+                
+                <!-- LOGIN FORM -->
+                <div class="w-110 h-100">
+                    <h1 class="login-heading">LOGIN</h1>
+
+                    <form action="/logto-dashboard" method="post" class="flex flex-col gap-4 form" autocomplete="off" >
+                        
+                        <input type="text"      name="store_ID"     autocomplete="off" aria-autocomplete="none"     placeholder="SID"      required >
+                        <input type="password"  name="password"     autocomplete="off" aria-autocomplete="none"     placeholder="Password" required >
+                        <button type="submit">LOGIN</button>
+                    
+                    </form>
+
+                    <br>
+                    <p class="text-center">Don't have an account ? <a href="store-registration" class="text-blue-800">Create one</a></p>
+                </div>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <%- include('partials/footer/footer') %>
+
+        <!-- JAVASCRIPT -->
+        <script src="storeLogin.js"></script>
+    </body>
+</html>

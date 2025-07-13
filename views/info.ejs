@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>doc-print</title>
+        
+        <!-- TAILWIND CSS CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <!-- MAIN CSS FILE  -->
+        <link rel="stylesheet" href="main.css">
+    
+    </head>
+    <body>
+        <!-- NAVBAR -->
+        <%- include('partials/navbars/navbar-register') %>
+
+        <main class="w-full h-full flex justify-center items-center" id="info">
+
+            <div class="w-5/6 h-full flex flex-col">
+                <h1>Information</h1>
+                <p>doc-print is a web application that allows print shops to process customer PDF files directly from the browser, eliminating the need to download them locally. This ensures complete data privacy and prevents any misuse of sensitive documents. <br>This application have 2 modules :</p>
+                <ul>
+                    <li>- Admin Module </li>
+                    <li>- Customer Module</li>
+                </ul>
+                <br> <br>
+
+                <h1>Features</h1>
+                <ul>
+                    <li>- Print Without Downloading</li>
+                    <li>- Customer Data Protection</li>
+                    <li>- No Login Requires for Uploading files</li>
+                    <li>- Zero Misuse Guarantee</li>
+                    <li>- Ideal Solution for Printing Shops</li>
+                </ul>
+            </div>
+
+            
+        </main>
+
+        <!-- FOOTER -->
+        <%- include('partials/footer/footer') %>
+
+    </body>
+</html>

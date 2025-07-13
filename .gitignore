@@ -1,0 +1,5 @@
+# - - - NODE MODULE FOLDER
+node_modules
+
+# - - - ENV FILE
+.env

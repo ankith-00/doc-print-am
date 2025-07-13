@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>doc-print</title>
+        
+        <!-- TAILWIND CSS CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <!-- MAIN CSS FILE  -->
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <!-- NAVBAR -->
+        <%- include('partials/navbars/navbar') %>
+
+        <!-- MAIN  -->
+        <main class="w-full h-full flex justify-center items-center">
+            <div class="register">
+
+                <!-- ALERT BOX -->
+                <div class="w-full flex justify-center items-center" id="alert-container">
+                    <div id="alert-box">
+                        <p id="alert-content"> </p>
+                    </div>
+                </div>
+                
+                <!-- STORE REGISTRATION FORM -->
+                <div class="w-110 h-110" id="formDiv"> 
+                    <h1 class="register-heading">REGISTER STORE</h1>
+
+                    <form  class="flex flex-col gap-4 form" autocomplete="off">
+
+                        <input type="text"     name="storeName"     autocomplete="off" aria-autocomplete="none"     placeholder="Store name"     required>
+                        <input type="text"     name="storeAddress"  autocomplete="off" aria-autocomplete="none"     placeholder="Store address"  required>
+                        <input type="text"     name="ownerName"     autocomplete="off" aria-autocomplete="none"     placeholder="Owner name"     required>
+                        <input type="email"    name="email"         autocomplete="off" aria-autocomplete="none"     placeholder="Email"          required>
+                        <input type="number"   name="phoneNumber"   autocomplete="off" aria-autocomplete="none"     placeholder="Phone"          required>
+                        <input type="password" name="password"      autocomplete="off" aria-autocomplete="none"     placeholder="Password"       required>
+
+                        <button type="submit">Register</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <!-- MAIN END -->
+
+        <%- include('partials/footer/footer') %>
+
+        <!-- JAVASCRIPT -->
+         <script src="registerStore.js"></script>
+    </body>
+</html>

@@ -1,0 +1,167 @@
+<html>
+    <head>
+        <title></title>
+        <!-- TAILWIND CSS CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <!-- MAIN CSS FILE  -->
+        <link rel="stylesheet" href="main.css">
+
+        <!-- PRINT JS CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/print-js/1.6.0/print.min.js"></script>
+
+    </head>
+    <body>
+        <!-- NAVBAR -->
+        <%- include('partials/navbars/dashboard-navbar', { store_ID: store_ID }) %>
+        
+        <!-- DASHBOARD CONTENT -->
+        <main class="w-full h-60 flex flex-col justify-center items-center" id="dashboar-main">
+            <div class="w-5/6 h-full"> 
+                <!-- DASHBOARD HEADER -->
+                <div class="w-5/6 h-30 fixed flex justify-between" id='StroInfo'>
+                    <div>
+                        <p class="text-4xl font-bold uppercase"><%= store_ID %></p>
+                        <p class="text-base" id="date"></p>
+                    </div>
+                    <button class="w-40 h-10 bg-blue-700 cursor-pointer text-white" id="fetchdataBtn">FETCH</button>
+                </div>
+            </div>
+        </main>
+
+        
+        <!-- TABLE HEADING -->
+         <div class="w-full flex justify-center">
+            <table class="w-5/6">
+                <thead>
+                    <tr>
+                        <th class="w-52 p-2">CUSTOMER &nbsp;NAME</th>
+                        <th class="p-2">DOCUMENT &nbsp;TITLE</th>
+                        <th class="w-52 p-2">ACTION</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+        <div class="w-full flex justify-center" id="scrollable">
+            <div class="w-5/6">
+                <table>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SCRIPT -->
+        <script>
+            // UPDATE DATE & SID
+            const presentDate = document.getElementById('date')
+            window.onload = function(){
+                const today = new Date();
+                const day = String(today.getDate()).padStart(2, '0');
+                const month = today.toLocaleString('en-US', { month: 'long' }).toUpperCase();
+                const year = today.getFullYear();
+                const weekday = today.toLocaleString('en-US', { weekday: 'long' }).toUpperCase();
+                presentDate.textContent = `${day} ${month} ${year}, ${weekday}`; 
+            }
+
+            // REFRESHING DASHBOARD TO MAKE IT REALTIME
+            setInterval(()=>{
+                fetchPdfData();
+            },4000)
+            
+
+            // FUNCTION TO DELETE THE FILE 
+            async function deletePdfFiles(DocLink, UserName, FileName){
+               const response = await fetch('/delete-pdf-files', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({URL: DocLink, UserName: UserName, FileName: FileName})
+                })
+                console.log(response);
+            }
+
+
+        
+            // PRINTING DOCUMENTS USING 'PRINT.JS' FUNCTION
+            function printDocument(DocLink, FolderName, DocName){
+                printJS({printable: DocLink, type:'pdf', showModal:true , modalMessage:'⏳Loading Document'});
+
+                setTimeout(() => {
+                    deletePdfFiles(DocLink, FolderName, DocName);
+                    console.log('File Deleted');
+                }, 5000);
+            }
+
+    
+            // FUNCTION TO PRINT ROWS
+            function loadDataIntoTable(jsonData) {
+            
+                const table = document.getElementById('dataTable');
+                const tbody = document.getElementById('tableBody');
+            
+                // Clear existing rows
+                tbody.innerHTML = '';
+            
+
+                // ADDING A ROW
+                jsonData.forEach((item, index) => {
+                    
+                    const row = document.createElement('tr');
+                
+                    // USER NAME
+                    const userNameCell = document.createElement('td');
+                    userNameCell.textContent = item.username || 'N/A';
+                    row.appendChild(userNameCell);
+                    
+                    // DOCUMENT NAME
+                    const docNameCell = document.createElement('td');
+                    docNameCell.textContent = item.documentFilename || 'N/A';
+                    row.appendChild(docNameCell);
+                    
+                    // Action cell with print button
+                    const actionCell = document.createElement('td');
+                    const printBtn = document.createElement('button');
+                    printBtn.textContent = 'Print';
+                    printBtn.addEventListener('click', () => {
+                        printDocument(item.documentLink, item.username, item.documentFilename);
+                    });
+
+                    actionCell.appendChild(printBtn);
+                    row.appendChild(actionCell);                    
+                    tbody.appendChild(row);
+                });
+            
+                // Show table
+                table.style.display = 'table';
+            }
+
+
+            // FUNCTION TO FETCH DATA FROM DATABASE
+            // const FetchBtn = document.getElementById('fetchdataBtn')
+
+            document.getElementById('fetchdataBtn').addEventListener('click', fetchPdfData);
+
+            async function fetchPdfData(){
+                try{
+                    const response = await fetch('/fetch-pdf-files');
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    const data = await response.json();
+            
+                    if (!Array.isArray(data)) {
+                        setTimeout(()=>{
+                            // console.log('Refreshing window');
+                            window.location.reload(true);
+                        },3000)
+                        throw new Error("Invalid response format: Expected an array.");
+                    }
+                    loadDataIntoTable(data)
+                    
+                }catch(error){
+                    console.log('Error fetching PDF files:', error.message);
+                }
+            }          
+        </script>
+    </body>
+</html>

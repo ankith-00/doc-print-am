@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <!-- TAILWIND CSS CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+        <!-- MAIN CSS FILE  -->
+        <link rel="stylesheet" href="main.css">
+
+        
+
+    </head>
+    <body>
+        <nav class="navbar">
+        <!-- LOGO -->
+            <div class="nav-logo">
+                <h1>doc print</h1>
+            </div>
+            <div class="flex gap-8">
+                <button id="show-qr" class="cursor-pointer">
+                    <img src="qr-code.svg" alt="" width="38" >
+                </button>
+
+                <button class="w-40 h-10 cursor-pointer text-white" id="logoutBtn">LOG OUT</button>
+            </div>
+        </nav>
+        
+        <!-- SID QR CODE POPUP -->
+        <div class="fixed w-full h-full justify-center items-center z-16" id="pop-up">
+            <div class="w-96 h-96 flex flex-col justify-between gap-12">
+                <!-- POPUP CONTENT -->
+                <div class="w-full h-96 flex flex-col justify-center items-center gap-4" id="QRPrint">
+
+                    <!-- INFO -->
+                    <div id="sass-info" class="w-full flex justify-between">
+                        <div>
+                            <h1>doc-print</h1>
+                        </div>
+                        <div>
+                            <p>Developed BY : Ankith Kumar <br>&nbsp;&nbsp;( insta : itz.ankith.sharma )</p>
+                        </div>
+                    </div>
+
+                    <img src="" alt="qr-image" height="250" width="250" id="store-qr">
+                    <p class="text-2xl font-bold uppercase"><%= store_ID %></p>
+                </div>
+
+                <div class="w-full flex justify-center items-center gap-4">
+                    <button class="w-40 h-10 bg-gray-700 cursor-pointer text-white" id="close-popup">CANCEL</button>
+                    <button class="w-40 h-10 cursor-pointer text-white" id="print-qr">PRINT</button>
+                </div>
+            
+            </div>
+        </div>
+
+
+    <!-- SCRIPT -->
+    <script>
+
+        // Store_ID 
+        const storeID = '<%= store_ID %>';
+
+        // QR POPUP & PRINTING
+        const showQR = document.getElementById('show-qr')
+        const QR = document.getElementById('pop-up')
+
+        const closeQR = document.getElementById('close-popup')
+        const printQR = document.getElementById('print-qr')
+
+        const qrImage = document.getElementById('store-qr')
+
+
+
+        // GENERATING STORE QR
+        function generateQR(){
+            qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?data=https://doc-print.streamlit.app/?store_ID=${storeID}`
+
+        }
+
+
+        // SHOW QR
+        showQR.onclick = ()=>{
+            generateQR()
+            QR.style.display = 'flex';
+        }
+
+
+        // CLOSE QR
+        closeQR.onclick = ()=>{
+            QR.style.display = 'none';
+        }
+
+        // PRINT QR
+        printQR.onclick = ()=>{
+            window.print()
+        }
+
+
+        // LOGOUT BTN LOGIC 
+        const logoutBtn = document.getElementById('logoutBtn').addEventListener('click', ()=>{
+            window.location.href='/logout'
+        })
+    </script>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>doc-print</title>
+    
+    <!-- TAILWIND CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- PRINT JS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/print-js/1.6.0/print.min.js"></script>
+
+    <!-- FONT AWSOME LINK -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- MAIN CSS FILE  -->
+    <link rel="stylesheet" href="main.css">
+
+<body>
+    
+    <%- include('partials/navbars/navbar') %>
+
+    <main class="w-full h-full flex justify-center items-center" id="index-main">
+
+        <div class="w-5/6 h-3/4 flex justify-between items-center gap-12">
+            
+            <div class="w-1/2 fit flex flex-col justify-start items-start" >
+                <h1 class="text-4xl font-bold">PRINT SMART, PRINT SECURE</h1>
+                <p>Doc-Print is a website that lets xerox shops print documents without saving them on a computer. This keeps customer files private and helps stop misuse</p>
+                <br>
+
+                <div class="flex gap-8">
+                    <button id="learn-more" onclick="window.location.href='/doc-print-info'">Learn more</button>
+                    <button id="get-started" onclick="window.location.href='/store-registration'">Get Started <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- IMG  -->
+            <div>
+                <img src="printing-machine.jpg" alt="">
+            </div>
+        
+        </div>
+
+    </main>
+
+    <%- include('partials/footer/footer') %>
+</body>
+</html>
